@@ -41,20 +41,24 @@ namespace Task2.PROG7312._19003041
         {
             Random random = new Random(Guid.NewGuid().GetHashCode());
             int firstDew = random.Next(1000);
+            if (firstDew == 0)
+            {
+                firstDew = random.Next(1000);
+            }
             return firstDew;
         }
 
         public void PopulateCallNumbers()
         {
+            var bookColours = new List<String> { "blueBook", "purpleBook", "orangeBook", "lightOrangeBook" };
             for (int i = 0; i < 7; i++)
             {
                 bookList.Items[i].Text = (GenerateDeweyTopLevel().ToString());
+                Random rand = new Random(Guid.NewGuid().GetHashCode());
+                int choice = rand.Next(bookColours.Count);
+                String bookColourChoice = bookColours[choice];
+                bookList.Items[i].ImageKey = bookColourChoice;
             }
-            if (WelcomeScreen.callDesc)
-            {
-
-            }
-            
         }
 
         private void PopulateDescriptions()
@@ -68,7 +72,6 @@ namespace Task2.PROG7312._19003041
                     {
                         case int n when n <= 99:
                             descList.Items[i].Text = callDictionary[99];
-                            descList.Items[i].ToolTipText = callDictionary[99];
                             goto exitInsideLoop;
 
                         case int n when n <= 199:
@@ -109,6 +112,57 @@ namespace Task2.PROG7312._19003041
                     }
                 }
             exitInsideLoop:;
+            }
+            List<string> tempDescList = new List<string>();
+            List<string> tempBookList = new List<string>();
+            foreach (ListViewItem item in descList.Items)
+            {
+                tempDescList.Add(item.Text);
+                Shuffle(tempDescList);
+            }
+            foreach (ListViewItem item in bookList.Items)
+            {
+                tempBookList.Add(item.Text);
+                Shuffle(tempBookList);
+            }
+
+            for (int i = 0; i < 7; i++)
+            {
+                bookList.Items[i].Text = tempBookList[i];
+                descList.Items[i].Text = tempDescList[i];
+            }
+            if (WelcomeScreen.callDesc)
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    Random rnd = new Random(Guid.NewGuid().GetHashCode());
+                    int k = rnd.Next(7);
+                    while (bookList.Items[k].Text.Equals(""))
+                    {
+                        k = rnd.Next(7);
+                    }
+                    bookList.Items[k].Text = "";
+                }
+                for (int i = 0; i < 7; i++)
+                {
+                    if (bookList.Items[i].Text.Equals(""))
+                    {
+                        bookList.Items[i].ImageKey = "noBook";
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    Random rnd = new Random(Guid.NewGuid().GetHashCode());
+                    int k = rnd.Next(7);
+                    while (descList.Items[k].Text.Equals("--------------------"))
+                    {
+                        k = rnd.Next(7);
+                    }
+                    descList.Items[k].Text = "--------------------";
+                }
             }
         }
 
@@ -346,6 +400,7 @@ namespace Task2.PROG7312._19003041
         //Load images and Call numbers with descriptions on load of form
         private void IdentifyingAreas_Load(object sender, EventArgs e)
         {
+            UpdatePoints();
             if (WelcomeScreen.callDesc)
             {
                 WelcomeScreen.callDesc = false;
@@ -377,6 +432,195 @@ namespace Task2.PROG7312._19003041
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnSubmit_Click(object sender, EventArgs e)
+        {
+            CompareAnswer();
+        }
+
+        private void CompareAnswer()
+        {
+            bool listCorrect = true;
+            if (WelcomeScreen.callDesc)
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    if (!bookList.Items[i].Text.Equals(""))
+                    {
+                        int callNum = Convert.ToInt32(bookList.Items[i].Text);
+                        int tempNum = 0;
+                        switch (callNum)
+                        {
+                            case int n when n <= 99:
+                                tempNum = 99;
+                                goto exitSwitch;
+
+                            case int n when n <= 199:
+                                tempNum = 199;
+                                goto exitSwitch;
+
+                            case int n when n <= 299:
+                                tempNum = 299;
+                                goto exitSwitch;
+
+                            case int n when n <= 399:
+                                tempNum = 399;
+                                goto exitSwitch;
+
+                            case int n when n <= 499:
+                                tempNum = 499;
+                                goto exitSwitch;
+
+                            case int n when n <= 599:
+                                tempNum = 599;
+                                goto exitSwitch;
+
+                            case int n when n <= 699:
+                                tempNum = 699;
+                                goto exitSwitch;
+
+                            case int n when n <= 799:
+                                tempNum = 799;
+                                goto exitSwitch;
+
+                            case int n when n <= 899:
+                                tempNum = 899;
+                                goto exitSwitch;
+
+                            case int n when n <= 999:
+                                tempNum = 999;
+                                goto exitSwitch;
+                        }
+                    exitSwitch:;
+                        if (!descList.Items[i].Text.Equals(callDictionary[tempNum]))
+                        {
+                            listCorrect = false;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    if (!descList.Items[i].Text.Equals("--------------------"))
+                    {
+                        int callNum = Convert.ToInt32(bookList.Items[i].Text);
+                        int tempNum = 0;
+                        switch (callNum)
+                        {
+                            case int n when n <= 99:
+                                tempNum = 99;
+                                goto exitSwitch;
+
+                            case int n when n <= 199:
+                                tempNum = 199;
+                                goto exitSwitch;
+
+                            case int n when n <= 299:
+                                tempNum = 299;
+                                goto exitSwitch;
+
+                            case int n when n <= 399:
+                                tempNum = 399;
+                                goto exitSwitch;
+
+                            case int n when n <= 499:
+                                tempNum = 499;
+                                goto exitSwitch;
+
+                            case int n when n <= 599:
+                                tempNum = 599;
+                                goto exitSwitch;
+
+                            case int n when n <= 699:
+                                tempNum = 699;
+                                goto exitSwitch;
+
+                            case int n when n <= 799:
+                                tempNum = 799;
+                                goto exitSwitch;
+
+                            case int n when n <= 899:
+                                tempNum = 899;
+                                goto exitSwitch;
+
+                            case int n when n <= 999:
+                                tempNum = 999;
+                                goto exitSwitch;
+                        }
+                    exitSwitch:;
+                        if (!descList.Items[i].Text.Equals(callDictionary[tempNum]))
+                        {
+                            listCorrect = false;
+                        }
+                    }
+                }
+            }
+            //If incorrect, pick from a pool of "incorrect" responses and display to user with encouragement message
+            if (!listCorrect)
+            {
+                Random rand = new Random(Guid.NewGuid().GetHashCode());
+                var incorrectResponses = new List<String> { "That is not correct.", "Incorrect.", "Sorry! That's not it!", "That was close, but not quite it.", "That is unfortunately, wrong. Try again." };
+                int choice = rand.Next(incorrectResponses.Count);
+                String chosenIncorrectResponse = incorrectResponses[choice];
+                if (WelcomeScreen.playerPoints != 0)
+                {
+                    WelcomeScreen.playerPoints -= 5;
+                    MessageBox.Show(chosenIncorrectResponse + "\n\nYou've lost 5 points :(\nPlease try again.", "Incorrect.");
+                    UpdatePoints();
+                }
+                else
+                {
+                    MessageBox.Show(chosenIncorrectResponse + "\n\nYou would have lost points, but you're already at 0 :(\nPlease try again. You can do it!", "Incorrect.");
+                }
+            }
+            else
+            {
+                //If the order is correct, pick from a pool of "correct" reponses and allow the user to try again or go back to main menu
+                Random rand = new Random(Guid.NewGuid().GetHashCode());
+                var correctResponses = new List<String> { "Congratulations! That is how it's done!", "You got it! Well Done!", "That is absolutely right! Good job!", "Very nice job! That's it!", "Nice Work! That's spot on!" };
+                int choice = rand.Next(correctResponses.Count);
+                String chosenCorrectResponse = correctResponses[choice];
+                WelcomeScreen.playerPoints += 20;
+                UpdatePoints();
+                DialogResult dialog = MessageBox.Show(chosenCorrectResponse + "\n\nYou've been awarded 20 points.\n\nWould you like to try another one?", "Correct!", MessageBoxButtons.YesNo);
+                if (dialog == DialogResult.Yes)
+                {
+                    this.Hide();
+                    IdentifyingAreas newIdentifyingAreas = new IdentifyingAreas();
+                    newIdentifyingAreas.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    this.Hide();
+                    WelcomeScreen newWelcome = new WelcomeScreen();
+                    newWelcome.ShowDialog();
+                    this.Close();
+                }
+            }
+        }
+
+        public static void Shuffle(List<string> list)
+        {
+            Random myRand = new Random(Guid.NewGuid().GetHashCode());
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = myRand.Next(n + 1);
+                string value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
+        }
+
+        private void UpdatePoints()
+        {
+            //Update the user points field
+            pointsBar.Text = "Points: " + WelcomeScreen.playerPoints.ToString();
         }
     }
 }
