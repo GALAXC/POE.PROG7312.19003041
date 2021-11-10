@@ -137,7 +137,7 @@ namespace Task2.PROG7312._19003041
             // bookList
             // 
             this.bookList.AllowDrop = true;
-            this.bookList.BackColor = System.Drawing.Color.White;
+            this.bookList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.bookList.Cursor = System.Windows.Forms.Cursors.No;
             this.bookList.HideSelection = false;
             this.bookList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
@@ -148,7 +148,7 @@ namespace Task2.PROG7312._19003041
             listViewItem5,
             listViewItem6,
             listViewItem7});
-            this.bookList.Location = new System.Drawing.Point(12, 27);
+            this.bookList.Location = new System.Drawing.Point(12, 46);
             this.bookList.MaximumSize = new System.Drawing.Size(250, 470);
             this.bookList.MinimumSize = new System.Drawing.Size(250, 470);
             this.bookList.MultiSelect = false;
@@ -173,7 +173,7 @@ namespace Task2.PROG7312._19003041
             // 
             this.dividerLine1.AutoSize = true;
             this.dividerLine1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dividerLine1.Location = new System.Drawing.Point(268, 46);
+            this.dividerLine1.Location = new System.Drawing.Point(268, 65);
             this.dividerLine1.Name = "dividerLine1";
             this.dividerLine1.Size = new System.Drawing.Size(18, 16);
             this.dividerLine1.TabIndex = 12;
@@ -183,7 +183,7 @@ namespace Task2.PROG7312._19003041
             // 
             this.dividerLine2.AutoSize = true;
             this.dividerLine2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dividerLine2.Location = new System.Drawing.Point(267, 105);
+            this.dividerLine2.Location = new System.Drawing.Point(267, 124);
             this.dividerLine2.Name = "dividerLine2";
             this.dividerLine2.Size = new System.Drawing.Size(18, 16);
             this.dividerLine2.TabIndex = 13;
@@ -193,7 +193,7 @@ namespace Task2.PROG7312._19003041
             // 
             this.dividerLine3.AutoSize = true;
             this.dividerLine3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dividerLine3.Location = new System.Drawing.Point(267, 162);
+            this.dividerLine3.Location = new System.Drawing.Point(267, 181);
             this.dividerLine3.Name = "dividerLine3";
             this.dividerLine3.Size = new System.Drawing.Size(18, 16);
             this.dividerLine3.TabIndex = 14;
@@ -203,7 +203,7 @@ namespace Task2.PROG7312._19003041
             // 
             this.dividerLine4.AutoSize = true;
             this.dividerLine4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dividerLine4.Location = new System.Drawing.Point(268, 225);
+            this.dividerLine4.Location = new System.Drawing.Point(268, 244);
             this.dividerLine4.Name = "dividerLine4";
             this.dividerLine4.Size = new System.Drawing.Size(18, 16);
             this.dividerLine4.TabIndex = 15;
@@ -213,7 +213,7 @@ namespace Task2.PROG7312._19003041
             // 
             this.dividerLine5.AutoSize = true;
             this.dividerLine5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dividerLine5.Location = new System.Drawing.Point(268, 282);
+            this.dividerLine5.Location = new System.Drawing.Point(268, 301);
             this.dividerLine5.Name = "dividerLine5";
             this.dividerLine5.Size = new System.Drawing.Size(18, 16);
             this.dividerLine5.TabIndex = 16;
@@ -223,7 +223,7 @@ namespace Task2.PROG7312._19003041
             // 
             this.dividerLine6.AutoSize = true;
             this.dividerLine6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dividerLine6.Location = new System.Drawing.Point(267, 343);
+            this.dividerLine6.Location = new System.Drawing.Point(267, 362);
             this.dividerLine6.Name = "dividerLine6";
             this.dividerLine6.Size = new System.Drawing.Size(18, 16);
             this.dividerLine6.TabIndex = 17;
@@ -233,7 +233,7 @@ namespace Task2.PROG7312._19003041
             // 
             this.dividerLine7.AutoSize = true;
             this.dividerLine7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dividerLine7.Location = new System.Drawing.Point(268, 400);
+            this.dividerLine7.Location = new System.Drawing.Point(268, 419);
             this.dividerLine7.Name = "dividerLine7";
             this.dividerLine7.Size = new System.Drawing.Size(18, 16);
             this.dividerLine7.TabIndex = 18;
@@ -241,18 +241,20 @@ namespace Task2.PROG7312._19003041
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(536, 400);
+            this.btnSubmit.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnSubmit.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSubmit.Location = new System.Drawing.Point(536, 419);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(126, 40);
             this.btnSubmit.TabIndex = 19;
             this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // descList
             // 
             this.descList.AllowDrop = true;
-            this.descList.BackColor = System.Drawing.Color.White;
+            this.descList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.descList.Cursor = System.Windows.Forms.Cursors.No;
             this.descList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descList.HideSelection = false;
@@ -264,7 +266,7 @@ namespace Task2.PROG7312._19003041
             listViewItem12,
             listViewItem13,
             listViewItem14});
-            this.descList.Location = new System.Drawing.Point(350, 162);
+            this.descList.Location = new System.Drawing.Point(350, 181);
             this.descList.MultiSelect = false;
             this.descList.Name = "descList";
             this.descList.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -282,7 +284,7 @@ namespace Task2.PROG7312._19003041
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(329, 165);
+            this.label1.Location = new System.Drawing.Point(329, 184);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 16);
             this.label1.TabIndex = 21;
@@ -292,7 +294,7 @@ namespace Task2.PROG7312._19003041
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(329, 184);
+            this.label2.Location = new System.Drawing.Point(329, 203);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(18, 16);
             this.label2.TabIndex = 22;
@@ -302,7 +304,7 @@ namespace Task2.PROG7312._19003041
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(329, 204);
+            this.label3.Location = new System.Drawing.Point(329, 223);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(18, 16);
             this.label3.TabIndex = 23;
@@ -312,7 +314,7 @@ namespace Task2.PROG7312._19003041
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(329, 223);
+            this.label4.Location = new System.Drawing.Point(329, 242);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(18, 16);
             this.label4.TabIndex = 24;
@@ -322,7 +324,7 @@ namespace Task2.PROG7312._19003041
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(329, 242);
+            this.label5.Location = new System.Drawing.Point(329, 261);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 16);
             this.label5.TabIndex = 25;
@@ -332,7 +334,7 @@ namespace Task2.PROG7312._19003041
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(329, 261);
+            this.label6.Location = new System.Drawing.Point(329, 280);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(18, 16);
             this.label6.TabIndex = 26;
@@ -342,7 +344,7 @@ namespace Task2.PROG7312._19003041
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(329, 280);
+            this.label7.Location = new System.Drawing.Point(329, 299);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(18, 16);
             this.label7.TabIndex = 27;
@@ -352,7 +354,7 @@ namespace Task2.PROG7312._19003041
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(346, 27);
+            this.label8.Location = new System.Drawing.Point(346, 46);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(122, 24);
             this.label8.TabIndex = 28;
@@ -361,7 +363,7 @@ namespace Task2.PROG7312._19003041
             // descriptionLabel
             // 
             this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Location = new System.Drawing.Point(350, 55);
+            this.descriptionLabel.Location = new System.Drawing.Point(350, 74);
             this.descriptionLabel.MaximumSize = new System.Drawing.Size(312, 0);
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.Size = new System.Drawing.Size(99, 13);
@@ -370,18 +372,21 @@ namespace Task2.PROG7312._19003041
             // 
             // btnSwitchGame
             // 
-            this.btnSwitchGame.Location = new System.Drawing.Point(350, 400);
+            this.btnSwitchGame.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnSwitchGame.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSwitchGame.Location = new System.Drawing.Point(350, 419);
             this.btnSwitchGame.Name = "btnSwitchGame";
             this.btnSwitchGame.Size = new System.Drawing.Size(126, 40);
             this.btnSwitchGame.TabIndex = 30;
             this.btnSwitchGame.Text = "Switch Sides";
-            this.btnSwitchGame.UseVisualStyleBackColor = true;
+            this.btnSwitchGame.UseVisualStyleBackColor = false;
             this.btnSwitchGame.Click += new System.EventHandler(this.btnSwitchGame_Click);
             // 
             // IdentifyingAreas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(684, 549);
             this.Controls.Add(this.btnSwitchGame);
             this.Controls.Add(this.descriptionLabel);
