@@ -364,9 +364,9 @@ namespace Task2.PROG7312._19003041
             this.descriptionLabel.Location = new System.Drawing.Point(350, 55);
             this.descriptionLabel.MaximumSize = new System.Drawing.Size(312, 0);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(35, 13);
+            this.descriptionLabel.Size = new System.Drawing.Size(99, 13);
             this.descriptionLabel.TabIndex = 29;
-            this.descriptionLabel.Text = "label9";
+            this.descriptionLabel.Text = "instructions go here";
             // 
             // btnSwitchGame
             // 

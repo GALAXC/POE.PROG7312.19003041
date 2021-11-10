@@ -23,6 +23,13 @@ namespace Task2.PROG7312._19003041
             InitializeComponent();
         }
 
+        //Update the user points in the corner
+        private void UpdatePoints()
+        {
+            //Update the user points field
+            pointsBar.Text = "Points: " + WelcomeScreen.playerPoints.ToString();
+        }
+
         //Load images and Call numbers with descriptions on load of form
         private void IdentifyingAreas_Load(object sender, EventArgs e)
         {
@@ -51,6 +58,19 @@ namespace Task2.PROG7312._19003041
             PopulateDescriptions();
         }
 
+        //Add the book images from the resources
+        public void AddBookImages()
+        {
+            imageList.Images.Add("blueBook", Properties.Resources.BookBlue);
+            imageList.Images.Add("orangeBook", Properties.Resources.BookOrange);
+            imageList.Images.Add("lightOrangeBook", Properties.Resources.BookLightOrange);
+            imageList.Images.Add("purpleBook", Properties.Resources.BookPurple);
+            imageList.Images.Add("noBook", Properties.Resources.NoBook);
+            int imageHeight = 57;
+            imageList.ImageSize = new Size(Convert.ToInt32(imageHeight / 0.32), imageHeight);
+            bookList.SmallImageList = imageList;
+        }
+
         public void AddCallDescriptions()
         {
             callDictionary.Add(99, "Computer science, information and general works");
@@ -65,6 +85,7 @@ namespace Task2.PROG7312._19003041
             callDictionary.Add(999, "History and geography");
         }
 
+        //Generate a random top level dewey decimal call number to be used for the game
         public int GenerateDeweyTopLevel()
         {
             Random random = new Random(Guid.NewGuid().GetHashCode());
@@ -76,6 +97,7 @@ namespace Task2.PROG7312._19003041
             return firstDew;
         }
 
+        //Populate the list with randomly generated top level dewey numbers and then assign them a book image to make it look nice
         public void PopulateCallNumbers()
         {
             var bookColours = new List<String> { "blueBook", "purpleBook", "orangeBook", "lightOrangeBook" };
@@ -89,6 +111,7 @@ namespace Task2.PROG7312._19003041
             }
         }
 
+        //Populate the descriptions box based on the randomly generated top level dewey decimal numbers
         private void PopulateDescriptions()
         {
             for (int i = 0; i < bookList.Items.Count; i++)
@@ -141,6 +164,7 @@ namespace Task2.PROG7312._19003041
                 }
             exitInsideLoop:;
             }
+            //Shuffle the list of items in the game
             List<string> tempDescList = new List<string>();
             List<string> tempBookList = new List<string>();
             foreach (ListViewItem item in descList.Items)
@@ -159,6 +183,7 @@ namespace Task2.PROG7312._19003041
                 bookList.Items[i].Text = tempBookList[i];
                 descList.Items[i].Text = tempDescList[i];
             }
+            //Adjust the game based on whether or not the user is matching descriptions/call numbers
             if (WelcomeScreen.callDesc)
             {
                 for (int i = 0; i < 3; i++)
@@ -194,260 +219,15 @@ namespace Task2.PROG7312._19003041
             }
         }
 
-        public void AddBookImages()
-        {
-            imageList.Images.Add("blueBook", Properties.Resources.BookBlue);
-            imageList.Images.Add("orangeBook", Properties.Resources.BookOrange);
-            imageList.Images.Add("lightOrangeBook", Properties.Resources.BookLightOrange);
-            imageList.Images.Add("purpleBook", Properties.Resources.BookPurple);
-            imageList.Images.Add("noBook", Properties.Resources.NoBook);
-            int imageHeight = 57;
-            imageList.ImageSize = new Size(Convert.ToInt32(imageHeight / 0.32), imageHeight);
-            bookList.SmallImageList = imageList;
-
-            /*
-            bookList.Items[0].ImageKey = "blueBook";
-            bookList.Items[1].ImageKey = "noBook";
-            bookList.Items[2].ImageKey = "purpleBook";
-            bookList.Items[3].ImageKey = "noBook";
-            bookList.Items[4].ImageKey = "orangeBook";
-            bookList.Items[5].ImageKey = "noBook";
-            bookList.Items[6].ImageKey = "lightOrangeBook";
-            */
-        }
-
-        //MouseDown event handler for bookList
-        private void bookList_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (WelcomeScreen.callDesc)
-            {
-                bookList.AutoArrange = false;
-                clickedBookItem = bookList.GetItemAt(e.X, e.Y);
-                if (clickedBookItem == null)
-                {
-                    return;
-                }
-
-                originalPoint = new Point(e.X, e.Y);
-                if (clickedBookItem != null)
-                {
-                    //droppedPoint = new Point(e.X - clickedItem.Position.X,
-                    //                          e.Y - clickedItem.Position.Y);
-                }
-            }
-        }
-
-        //MouseDown event handler for descList
-        private void descList_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (!WelcomeScreen.callDesc)
-            {
-                descList.AutoArrange = false;
-                clickedDescItem = descList.GetItemAt(e.X, e.Y);
-                if (clickedDescItem == null)
-                {
-                    return;
-                }
-
-                originalPoint = new Point(e.X, e.Y);
-                if (clickedDescItem != null)
-                {
-                    //droppedPoint = new Point(e.X - clickedItem.Position.X,
-                    //                          e.Y - clickedItem.Position.Y);
-                }
-            }
-        }
-
-        //MouseMove event handler for bookList
-        private void bookList_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (WelcomeScreen.callDesc)
-            {
-                if (clickedBookItem != null)
-                {
-                    Cursor = Cursors.Hand;
-                    clickedBookItem.Position = new Point(0, e.Y);
-                }
-            }
-        }
-
-        //MouseMove event handler for descList
-        private void descList_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (!WelcomeScreen.callDesc)
-            {
-                if (clickedDescItem != null)
-                {
-                    Cursor = Cursors.Hand;
-                    clickedDescItem.Position = new Point(0, e.Y);
-                }
-            }
-        }
-
-        //MouseUp event handler for bookList
-        private void bookList_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (WelcomeScreen.callDesc)
-            {
-                //clickedItem.Position = originalPoint;
-                ListViewItem itemAtMovedLocation = bookList.GetItemAt(0, e.Y);
-
-                if (clickedBookItem == null)
-                {
-                    ReorderList(bookList);
-                    return;
-                }
-
-                if (itemAtMovedLocation == null)
-                {
-                    if (e.Y > imageList.ImageSize.Height + 1)
-                    {
-                        bookList.Items.Remove(clickedBookItem);
-                        bookList.Items.Insert(bookList.Items.Count, clickedBookItem);
-                    }
-                    ReorderList(bookList);
-                    return;
-                }
-
-                Rectangle rect = itemAtMovedLocation.GetBounds(ItemBoundsPortion.Entire);
-
-                // find out if we insert before or after the item the mouse is over
-                bool insertBefore;
-                if (e.Y < rect.Top + (rect.Height / 2))
-                    insertBefore = true;
-                else
-                    insertBefore = false;
-                if (clickedBookItem != itemAtMovedLocation)
-                // if we dropped the item on itself, nothing is to be done
-                {
-                    if (insertBefore)
-                    {
-                        bookList.Items.Remove(clickedBookItem);
-                        bookList.Items.Insert(itemAtMovedLocation.Index, clickedBookItem);
-                    }
-                    else
-                    {
-                        bookList.Items.Remove(clickedBookItem);
-                        bookList.Items.Insert(itemAtMovedLocation.Index + 1, clickedBookItem);
-                    }
-                }
-
-                ReorderList(bookList);
-                bookList.AutoArrange = true;
-                //clickedItem = null;
-
-                Cursor = Cursors.Default;
-
-                //DisplayOrder(bookList);
-            }
-        }
-
-        //MouseUp event handler for descList
-        private void descList_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (!WelcomeScreen.callDesc)
-            {
-                //clickedItem.Position = originalPoint;
-                ListViewItem itemAtMovedLocation = descList.GetItemAt(0, e.Y);
-
-                if (clickedDescItem == null)
-                {
-                    ReorderList(descList);
-                    return;
-                }
-
-                if (itemAtMovedLocation == null)
-                {
-                    if (e.Y > imageList.ImageSize.Height + 1)
-                    {
-                        descList.Items.Remove(clickedDescItem);
-                        descList.Items.Insert(descList.Items.Count, clickedDescItem);
-                    }
-                    ReorderList(descList);
-                    return;
-                }
-
-                Rectangle rect = itemAtMovedLocation.GetBounds(ItemBoundsPortion.Entire);
-
-                // find out if we insert before or after the item the mouse is over
-                bool insertBefore;
-                if (e.Y < rect.Top + (rect.Height / 2))
-                    insertBefore = true;
-                else
-                    insertBefore = false;
-                if (clickedDescItem != itemAtMovedLocation)
-                // if we dropped the item on itself, nothing is to be done
-                {
-                    if (insertBefore)
-                    {
-                        descList.Items.Remove(clickedDescItem);
-                        descList.Items.Insert(itemAtMovedLocation.Index, clickedDescItem);
-                    }
-                    else
-                    {
-                        descList.Items.Remove(clickedDescItem);
-                        descList.Items.Insert(itemAtMovedLocation.Index + 1, clickedDescItem);
-                    }
-                }
-
-                ReorderList(descList);
-                descList.AutoArrange = true;
-                //clickedItem = null;
-
-                Cursor = Cursors.Default;
-
-                //DisplayOrder(descList);
-            }
-        }
-
-        //REMOVE AFTER TESTING IS COMPLETE
-        //REMOVE AFTER TESTING IS COMPLETE
-
-        //Temporarily display the order of the books in a message box
-        private void DisplayOrder(ListView list)
-        {
-            String myOrder = "";
-            for (int i = 0; i < list.Items.Count; i++)
-            {
-                myOrder += " " + list.Items[i].Text;
-            }
-            MessageBox.Show(myOrder);
-        }
-
-        //REMOVE AFTER TESTING IS COMPLETE
-        //REMOVE AFTER TESTING IS COMPLETE
-
-        private void ReorderList(ListView list)
-        {
-            for (int i = 0; i < list.Items.Count; i++)
-            {
-                bookList.Items[i].Position = new Point(0, 0 + (i * imageList.ImageSize.Height));
-            }
-        }
-
-        //Back Toolstrip
-        private void goBackToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            WelcomeScreen newWelcome = new WelcomeScreen();
-            newWelcome.ShowDialog();
-            this.Close();
-        }
-
-        //Close Toolstrip
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void BtnSubmit_Click(object sender, EventArgs e)
-        {
-            CompareAnswer();
-        }
+        /*
+        Full method for comparing the final answer that the user has provided once clicking submitting
+        and then providing feedback on whether or not the answer is correct and changing the score accordingly
+        */
 
         private void CompareAnswer()
         {
             bool listCorrect = true;
+            //If User is matching call numbers
             if (WelcomeScreen.callDesc)
             {
                 for (int i = 0; i < 7; i++)
@@ -506,6 +286,7 @@ namespace Task2.PROG7312._19003041
                     }
                 }
             }
+            //If User is matching call descriptions
             else
             {
                 for (int i = 0; i < 7; i++)
@@ -609,6 +390,16 @@ namespace Task2.PROG7312._19003041
             }
         }
 
+        //Reorder the list properly once the user has dragged an entry
+        private void ReorderList(ListView list)
+        {
+            for (int i = 0; i < list.Items.Count; i++)
+            {
+                bookList.Items[i].Position = new Point(0, 0 + (i * imageList.ImageSize.Height));
+            }
+        }
+
+        //Method for shuffling the list of items in the listview for the game
         public static void Shuffle(List<string> list)
         {
             Random myRand = new Random(Guid.NewGuid().GetHashCode());
@@ -623,10 +414,202 @@ namespace Task2.PROG7312._19003041
             }
         }
 
-        private void UpdatePoints()
+        //MouseDown event handler for bookList
+        private void bookList_MouseDown(object sender, MouseEventArgs e)
         {
-            //Update the user points field
-            pointsBar.Text = "Points: " + WelcomeScreen.playerPoints.ToString();
+            if (WelcomeScreen.callDesc)
+            {
+                bookList.AutoArrange = false;
+                clickedBookItem = bookList.GetItemAt(e.X, e.Y);
+                if (clickedBookItem == null)
+                {
+                    return;
+                }
+
+                originalPoint = new Point(e.X, e.Y);
+                if (clickedBookItem != null)
+                {
+                }
+            }
+        }
+
+        //MouseDown event handler for descList
+        private void descList_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (!WelcomeScreen.callDesc)
+            {
+                descList.AutoArrange = false;
+                clickedDescItem = descList.GetItemAt(e.X, e.Y);
+                if (clickedDescItem == null)
+                {
+                    return;
+                }
+
+                originalPoint = new Point(e.X, e.Y);
+                if (clickedDescItem != null)
+                {
+                }
+            }
+        }
+
+        //MouseMove event handler for bookList
+        private void bookList_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (WelcomeScreen.callDesc)
+            {
+                if (clickedBookItem != null)
+                {
+                    Cursor = Cursors.Hand;
+                    clickedBookItem.Position = new Point(0, e.Y);
+                }
+            }
+        }
+
+        //MouseMove event handler for descList
+        private void descList_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!WelcomeScreen.callDesc)
+            {
+                if (clickedDescItem != null)
+                {
+                    Cursor = Cursors.Hand;
+                    clickedDescItem.Position = new Point(0, e.Y);
+                }
+            }
+        }
+
+        //MouseUp event handler for bookList
+        private void bookList_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (WelcomeScreen.callDesc)
+            {
+                ListViewItem itemAtMovedLocation = bookList.GetItemAt(0, e.Y);
+
+                if (clickedBookItem == null)
+                {
+                    ReorderList(bookList);
+                    return;
+                }
+
+                if (itemAtMovedLocation == null)
+                {
+                    if (e.Y > imageList.ImageSize.Height + 1)
+                    {
+                        bookList.Items.Remove(clickedBookItem);
+                        bookList.Items.Insert(bookList.Items.Count, clickedBookItem);
+                    }
+                    ReorderList(bookList);
+                    return;
+                }
+
+                Rectangle rect = itemAtMovedLocation.GetBounds(ItemBoundsPortion.Entire);
+
+                //Find out if inserted before the block or after
+                bool insertBefore;
+                if (e.Y < rect.Top + (rect.Height / 2))
+                    insertBefore = true;
+                else
+                    insertBefore = false;
+                if (clickedBookItem != itemAtMovedLocation)
+                //If dropped on itself, do nothing
+                {
+                    if (insertBefore)
+                    {
+                        bookList.Items.Remove(clickedBookItem);
+                        bookList.Items.Insert(itemAtMovedLocation.Index, clickedBookItem);
+                    }
+                    else
+                    {
+                        bookList.Items.Remove(clickedBookItem);
+                        bookList.Items.Insert(itemAtMovedLocation.Index + 1, clickedBookItem);
+                    }
+                }
+
+                ReorderList(bookList);
+                bookList.AutoArrange = true;
+
+                Cursor = Cursors.Default;
+            }
+        }
+
+        //MouseUp event handler for descList
+        private void descList_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (!WelcomeScreen.callDesc)
+            {
+                ListViewItem itemAtMovedLocation = descList.GetItemAt(0, e.Y);
+
+                if (clickedDescItem == null)
+                {
+                    ReorderList(descList);
+                    return;
+                }
+
+                if (itemAtMovedLocation == null)
+                {
+                    if (e.Y > imageList.ImageSize.Height + 1)
+                    {
+                        descList.Items.Remove(clickedDescItem);
+                        descList.Items.Insert(descList.Items.Count, clickedDescItem);
+                    }
+                    ReorderList(descList);
+                    return;
+                }
+
+                Rectangle rect = itemAtMovedLocation.GetBounds(ItemBoundsPortion.Entire);
+
+                //Find out if inserted before the block or after
+                bool insertBefore;
+                if (e.Y < rect.Top + (rect.Height / 2))
+                    insertBefore = true;
+                else
+                    insertBefore = false;
+                if (clickedDescItem != itemAtMovedLocation)
+                //If dropped on itself, do nothing
+                {
+                    if (insertBefore)
+                    {
+                        descList.Items.Remove(clickedDescItem);
+                        descList.Items.Insert(itemAtMovedLocation.Index, clickedDescItem);
+                    }
+                    else
+                    {
+                        descList.Items.Remove(clickedDescItem);
+                        descList.Items.Insert(itemAtMovedLocation.Index + 1, clickedDescItem);
+                    }
+                }
+
+                ReorderList(descList);
+                descList.AutoArrange = true;
+
+                Cursor = Cursors.Default;
+            }
+        }
+
+        /*
+
+         * Toolstrips and Buttons
+
+         */
+
+        //Back Toolstrip
+        private void goBackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            WelcomeScreen newWelcome = new WelcomeScreen();
+            newWelcome.ShowDialog();
+            this.Close();
+        }
+
+        //Close Toolstrip
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnSubmit_Click(object sender, EventArgs e)
+        {
+            CompareAnswer();
         }
 
         private void btnSwitchGame_Click(object sender, EventArgs e)
