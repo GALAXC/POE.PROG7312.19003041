@@ -23,6 +23,34 @@ namespace Task2.PROG7312._19003041
             InitializeComponent();
         }
 
+        //Load images and Call numbers with descriptions on load of form
+        private void IdentifyingAreas_Load(object sender, EventArgs e)
+        {
+            UpdatePoints();
+            if (WelcomeScreen.callDesc)
+            {
+                WelcomeScreen.callDesc = false;
+                descList.Cursor = Cursors.Hand;
+                bookList.Cursor = Cursors.No;
+                descriptionLabel.Text = "Match the descriptions below to the correct call numbers on the books to the left.\n\n" +
+                    "Drag the descriptions to the relevant number of the book you are matching it to.\n\n" +
+                    "Good luck!";
+            }
+            else
+            {
+                WelcomeScreen.callDesc = true;
+                bookList.Cursor = Cursors.Hand;
+                descList.Cursor = Cursors.No;
+                descriptionLabel.Text = "Match the call numbers on the books to the left with the correct descriptions given below\n\n" +
+                    "Drag the books to the relevant number of the description you are matching it to.\n\n" +
+                    "Good luck!";
+            }
+            AddBookImages();
+            AddCallDescriptions();
+            PopulateCallNumbers();
+            PopulateDescriptions();
+        }
+
         public void AddCallDescriptions()
         {
             callDictionary.Add(99, "Computer science, information and general works");
@@ -397,28 +425,6 @@ namespace Task2.PROG7312._19003041
             }
         }
 
-        //Load images and Call numbers with descriptions on load of form
-        private void IdentifyingAreas_Load(object sender, EventArgs e)
-        {
-            UpdatePoints();
-            if (WelcomeScreen.callDesc)
-            {
-                WelcomeScreen.callDesc = false;
-                descList.Cursor = Cursors.Hand;
-                bookList.Cursor = Cursors.No;
-            }
-            else
-            {
-                WelcomeScreen.callDesc = true;
-                bookList.Cursor = Cursors.Hand;
-                descList.Cursor = Cursors.No;
-            }
-            AddBookImages();
-            AddCallDescriptions();
-            PopulateCallNumbers();
-            PopulateDescriptions();
-        }
-
         //Back Toolstrip
         private void goBackToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -621,6 +627,14 @@ namespace Task2.PROG7312._19003041
         {
             //Update the user points field
             pointsBar.Text = "Points: " + WelcomeScreen.playerPoints.ToString();
+        }
+
+        private void btnSwitchGame_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IdentifyingAreas newIdentifyingAreas = new IdentifyingAreas();
+            newIdentifyingAreas.ShowDialog();
+            this.Close();
         }
     }
 }

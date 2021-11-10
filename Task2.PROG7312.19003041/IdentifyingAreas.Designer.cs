@@ -71,7 +71,8 @@ namespace Task2.PROG7312._19003041
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.instructionsText = new System.Windows.Forms.Label();
+            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.btnSwitchGame = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,7 +83,7 @@ namespace Task2.PROG7312._19003041
             this.pointsBar});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(674, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(684, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -98,14 +99,14 @@ namespace Task2.PROG7312._19003041
             // goBackToolStripMenuItem
             // 
             this.goBackToolStripMenuItem.Name = "goBackToolStripMenuItem";
-            this.goBackToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.goBackToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.goBackToolStripMenuItem.Text = "Back";
             this.goBackToolStripMenuItem.Click += new System.EventHandler(this.goBackToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -240,9 +241,9 @@ namespace Task2.PROG7312._19003041
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(250, 502);
+            this.btnSubmit.Location = new System.Drawing.Point(536, 400);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(182, 40);
+            this.btnSubmit.Size = new System.Drawing.Size(126, 40);
             this.btnSubmit.TabIndex = 19;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -357,21 +358,33 @@ namespace Task2.PROG7312._19003041
             this.label8.TabIndex = 28;
             this.label8.Text = "Instructions:";
             // 
-            // instructionsText
+            // descriptionLabel
             // 
-            this.instructionsText.AutoSize = true;
-            this.instructionsText.Location = new System.Drawing.Point(350, 55);
-            this.instructionsText.Name = "instructionsText";
-            this.instructionsText.Size = new System.Drawing.Size(35, 13);
-            this.instructionsText.TabIndex = 29;
-            this.instructionsText.Text = "label9";
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.Location = new System.Drawing.Point(350, 55);
+            this.descriptionLabel.MaximumSize = new System.Drawing.Size(312, 0);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(35, 13);
+            this.descriptionLabel.TabIndex = 29;
+            this.descriptionLabel.Text = "label9";
+            // 
+            // btnSwitchGame
+            // 
+            this.btnSwitchGame.Location = new System.Drawing.Point(350, 400);
+            this.btnSwitchGame.Name = "btnSwitchGame";
+            this.btnSwitchGame.Size = new System.Drawing.Size(126, 40);
+            this.btnSwitchGame.TabIndex = 30;
+            this.btnSwitchGame.Text = "Switch Sides";
+            this.btnSwitchGame.UseVisualStyleBackColor = true;
+            this.btnSwitchGame.Click += new System.EventHandler(this.btnSwitchGame_Click);
             // 
             // IdentifyingAreas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 554);
-            this.Controls.Add(this.instructionsText);
+            this.ClientSize = new System.Drawing.Size(684, 549);
+            this.Controls.Add(this.btnSwitchGame);
+            this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -433,6 +446,7 @@ namespace Task2.PROG7312._19003041
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label instructionsText;
+        private System.Windows.Forms.Label descriptionLabel;
+        private System.Windows.Forms.Button btnSwitchGame;
     }
 }
