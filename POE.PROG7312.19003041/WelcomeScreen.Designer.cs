@@ -65,6 +65,7 @@
             this.btnFindCallNums.TabIndex = 2;
             this.btnFindCallNums.Text = "Finding Call Numbers";
             this.btnFindCallNums.UseVisualStyleBackColor = true;
+            this.btnFindCallNums.Click += new System.EventHandler(this.btnFindCallNums_Click);
             // 
             // label1
             // 

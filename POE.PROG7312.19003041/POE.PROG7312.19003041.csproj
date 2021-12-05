@@ -61,12 +61,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CallNumbers.cs" />
+    <Compile Include="FindingCallNumbers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindingCallNumbers.Designer.cs">
+      <DependentUpon>FindingCallNumbers.cs</DependentUpon>
+    </Compile>
     <Compile Include="IdentifyingAreas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="IdentifyingAreas.Designer.cs">
       <DependentUpon>IdentifyingAreas.cs</DependentUpon>
     </Compile>
+    <Compile Include="TreeNode.cs" />
     <Compile Include="WelcomeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +89,9 @@
     <Compile Include="ReplaceBooks.Designer.cs">
       <DependentUpon>ReplaceBooks.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FindingCallNumbers.resx">
+      <DependentUpon>FindingCallNumbers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IdentifyingAreas.resx">
       <DependentUpon>IdentifyingAreas.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +128,7 @@
     <Content Include="Images\BookBlue.png" />
     <Content Include="Images\BookLightOrange.png" />
     <Content Include="Images\BookOrange.png" />
+    <Content Include="Resources\CallNumbers.txt" />
     <None Include="Images\BookPurple.png" />
     <None Include="Images\NoBook.png" />
   </ItemGroup>

@@ -1,0 +1,110 @@
+000 Computer Science, Information, & General Works
+ 010 Bibliographies
+  015 Of works from specific places
+ 030 Encyclopaedias & books of facts
+  034 Encyclopaedias in French, Occitan, Catalan
+ 050 Magazines, journals & serials
+  052 General serial publications in English
+ 070 News media, journalism & publishing
+  075 Journalism and newspapers in Italy
+ 080 Quotations
+  087 General collections in Slavic languages
+100 Philosophy
+ 110 Metaphysics
+  111 Ontology
+ 130 Parapsychology & occultism
+  135 Dreams and mysteries
+ 140 Philosophical schools of thought
+  145 Sensationalism
+ 150 Psychology
+  152 Perception, movement, emotions & drives
+ 170 Ethics
+  172 Political Ethics
+200 Religion
+ 220 The Bible
+  225 New Testament
+ 230 Christianity
+  231 God
+ 270 History of Christianity
+  274 History of Christianity in Europe
+ 280 Christian denominations
+  283 Anglican churches
+ 290 Other Religions
+  296 Judaism
+300 Social Sciences
+ 310 Statistics
+  314 General statistics of Europe
+ 320 Political sciences
+  324 The political process
+ 340 Law
+  341 Law of nations
+ 360 Social problems & social services
+  364 Criminology
+ 370 Education
+  378 Higher educations (Tertiary education)
+400 Language
+ 410 Linguistics
+  419 Sign languages
+ 420 English & Old English languages
+  427 English language variations
+ 460 Spanish, Portuguese, Galician
+  461 Writing system, phonology, phonetics
+ 470 Latin & Italic languages
+  475 Grammar of classical Latin
+ 490 Other Languages
+  496 African languages
+500 Natural Sciences and Mathematics
+ 510 Mathematics
+  512 Algebra
+ 520 Astronomy
+  521 Celestial mechanics
+ 530 Physics
+  534 Sound and related vibrations
+ 540 Chemistry
+  543 Analytical chemistries
+ 590 Animals (Zoology)
+  592 Invertebrates
+600 Technology (Applied Sciences)
+ 610 Medicine & health
+  616 Diseases
+ 630 Agriculture
+  634 Orchards, fruits, forestry
+ 650 Management & public relations
+  652 Processes of written communication
+ 660 Chemical engineering
+  663 Beverage technology
+ 690 Construction of buildings
+  696 Utilities
+700 The Arts
+ 710 Area planning & landscape architecture
+  716 Herbaceous plants
+ 720 Architecture
+  721 Architectural materials and structure
+ 740 Graphic arts & decorative arts
+  748 Glass
+ 750 Painting
+  754 Genre paintings
+ 780 Music
+  782 Vocal music
+800 Literature (Belles-lettres) and rhetoric
+ 810 American literature in English
+  813 American fiction in English
+ 830 German & related literatures 
+  833 German fiction
+ 840 French & related literatures
+  843 French fiction
+ 860 Spanish, Portuguese, Galician literatures
+  863 Spanish fiction
+ 870 Latin & Italic literatures
+  874 Latin lyric poetry
+900 History, geography, and auxiliary disciplines
+ 910 Geography & travel
+  916 Geography of and travel in Africa
+ 920 Biography & genealogy
+  929 Genealogy, names & insignia
+ 940 History of Europe
+  945 Italy, San Marino, Vatican City, Malta
+ 960 History of Africa
+  961 Tunisia and Libya
+ 980 History of South America
+  987 Venezuel

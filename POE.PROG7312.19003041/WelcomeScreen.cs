@@ -42,5 +42,14 @@ namespace POE.PROG7312._19003041
         {
             this.Close();
         }
+
+        private void btnFindCallNums_Click(object sender, EventArgs e)
+        {
+            //Open finding call numbers screen when button is clicked
+            this.Hide();
+            FindingCallNumbers newFindingCallNumbers = new FindingCallNumbers();
+            newFindingCallNumbers.ShowDialog();
+            this.Close();
+        }
     }
 }
