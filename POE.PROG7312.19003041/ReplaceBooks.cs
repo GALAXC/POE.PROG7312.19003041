@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Task2.PROG7312._19003041
+namespace POE.PROG7312._19003041
 {
     public partial class ReplaceBooks : Form
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Task2.PROG7312._19003041.Properties {
+namespace POE.PROG7312._19003041.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

@@ -1,4 +1,4 @@
-﻿namespace Task2.PROG7312._19003041
+﻿namespace POE.PROG7312._19003041
 {
     partial class ReplaceBooks
     {

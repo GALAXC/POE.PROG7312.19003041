@@ -1,4 +1,4 @@
-﻿namespace Task2.PROG7312._19003041
+﻿namespace POE.PROG7312._19003041
 {
     partial class WelcomeScreen
     {
@@ -34,8 +34,6 @@
             this.btnFindCallNums = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -61,7 +59,6 @@
             // 
             // btnFindCallNums
             // 
-            this.btnFindCallNums.Enabled = false;
             this.btnFindCallNums.Location = new System.Drawing.Point(91, 372);
             this.btnFindCallNums.Name = "btnFindCallNums";
             this.btnFindCallNums.Size = new System.Drawing.Size(156, 66);
@@ -89,24 +86,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "What would you like to learn?";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(253, 399);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Coming Soon!";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 399);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Coming Soon!";
-            // 
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(127, 444);
@@ -123,8 +102,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(339, 474);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnFindCallNums);
@@ -146,8 +123,6 @@
         private System.Windows.Forms.Button btnFindCallNums;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnExit;
     }
 }

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EF5FBE56-1503-485D-B80B-F2C66F11CC30}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Task2.PROG7312._19003041</RootNamespace>
-    <AssemblyName>Task2.PROG7312.19003041</AssemblyName>
+    <RootNamespace>POE.PROG7312._19003041</RootNamespace>
+    <AssemblyName>POE.PROG7312.19003041</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
