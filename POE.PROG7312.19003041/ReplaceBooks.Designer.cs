@@ -81,14 +81,14 @@
             // goBackToolStripMenuItem
             // 
             this.goBackToolStripMenuItem.Name = "goBackToolStripMenuItem";
-            this.goBackToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.goBackToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.goBackToolStripMenuItem.Text = "Back";
             this.goBackToolStripMenuItem.Click += new System.EventHandler(this.GoBackToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItem_Click);
             // 
@@ -106,14 +106,14 @@
             // 
             this.correct20PointsToolStripMenuItem.Enabled = false;
             this.correct20PointsToolStripMenuItem.Name = "correct20PointsToolStripMenuItem";
-            this.correct20PointsToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.correct20PointsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.correct20PointsToolStripMenuItem.Text = "Correct: +20 points";
             // 
             // incorrect5PointsToolStripMenuItem
             // 
             this.incorrect5PointsToolStripMenuItem.Enabled = false;
             this.incorrect5PointsToolStripMenuItem.Name = "incorrect5PointsToolStripMenuItem";
-            this.incorrect5PointsToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.incorrect5PointsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.incorrect5PointsToolStripMenuItem.Text = "Incorrect: -5 points";
             // 
             // upCallBtn
