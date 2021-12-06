@@ -7,20 +7,37 @@ namespace POE.PROG7312._19003041
 {
     public class CallNumbers
     {
+        //To temporarily store all values from tree
         public static List<string> thirdLevels = new List<string>();
+
         public static List<string> secondLevels = new List<string>();
         public static List<string> firstLevels = new List<string>();
+
+        //Random
         public static Random myRand = new Random();
+
+        //String to keep track of answers for quiz
         public static string myAnswer = "";
+
         public static string myGoal = "";
         public static string firstLevelAnswer = "";
+
+        //Lists that store options the user can select
         public static List<string> thirdLevelChoices = new List<string>();
+
         public static List<string> secondLevelChoices = new List<string>();
         public static List<string> firstLevelChoices = new List<string>();
+
+        //To store the final answers
         public static string thirdLevelAnswer = "";
+
         public static string secondLevelAnswer = "";
         public static string finalAnswer = "";
 
+        /// <summary>
+        /// Method is used to load the call numbers from the file and populate it into a tree
+        /// It is also responsible for preparing the tree the output options and answers for the quiz
+        /// </summary>
         public static void LoadCallNums()
         {
             //Instantiate the path of the text file with call numbers inside
@@ -43,93 +60,18 @@ namespace POE.PROG7312._19003041
                 }
                 //Build the tree based on lines from file
                 TreeNode tree = TreeNode.BuildTree(txtFile);
-                //Generate a random answer for the user to guess
+                //Generate a random answer for the user to guess and random other options user can select
                 SelectRandomAnswer(tree);
                 //Obscure the answer by removing the call number
                 myGoal = thirdLevelAnswer.Substring(4, thirdLevelAnswer.Length - 4);
-                ////Determine call number for final choice box
-                //finalAnswer = myAnswer.Substring(0, 3);
-                ////Add answer to list of possible final answers
-                //thirdLevelChoices.Clear();
-                //secondLevelChoices.Clear();
-                //firstLevelChoices.Clear();
-                //thirdLevelChoices.Add(finalAnswer);
-                //for (int i = 0; i < 3; i++)
-                //{
-                //    Random theRand = new Random(Guid.NewGuid().GetHashCode());
-                //    int choice = theRand.Next(thirdLevels.Count);
-
-                //    if (myAnswer.Equals(thirdLevels[choice]))
-                //    {
-                //        i--;
-                //    }
-                //    else
-                //    {
-                //        thirdLevelChoices.Add(thirdLevels[choice].Substring(0, 3));
-                //        PopulateWrongChoices(tree, thirdLevels[choice]);
-                //    }
-                //}
-                //thirdLevelChoices.Sort();
-
-                //foreach (TreeNode t in tree)
-                //{
-                //    foreach (TreeNode t1 in t)
-                //    {
-                //        try
-                //        {
-                //            if (t1.GetChild(myAnswer).ID.Equals(myAnswer))
-                //            {
-                //                secondLevelAnswer = t1.ID;
-                //                firstLevelAnswer = t1.Parent.ID;
-                //            }
-                //        }
-                //        catch (KeyNotFoundException e)
-                //        {
-                //            Console.WriteLine(e.Message);
-                //            Console.WriteLine(t1.ID);
-                //            //break;
-                //        }
-                //        catch (Exception e)
-                //        {
-                //            MessageBox.Show(e.Message);
-                //        }
-                //    }
-                //}
-                //secondLevelChoices.Add(secondLevelAnswer);
-                //firstLevelChoices.Add(firstLevelAnswer);
-                //secondLevelChoices.Sort();
-                //firstLevelChoices.Sort();
             }
         }
 
-        private static void PopulateWrongChoices(TreeNode tree, String childID)
-        {
-            foreach (TreeNode tree1 in tree)
-            {
-                foreach (TreeNode tree2 in tree1)
-                {
-                    try
-                    {
-                        if (tree2.GetChild(childID).ID.Equals(childID))
-                        {
-                            secondLevelChoices.Add(tree2.ID);
-                            firstLevelChoices.Add(tree2.Parent.ID);
-                        }
-                    }
-                    catch (KeyNotFoundException e)
-                    {
-                        Console.WriteLine(e.Message);
-                        Console.WriteLine(tree2.ID);
-                        //break;
-                    }
-                    catch (Exception e)
-                    {
-                        MessageBox.Show(e.Message);
-                    }
-                }
-            }
-        }
-
+        /// <summary>
+        /// Take the tree of data read from the data file and use it to populate the UI with options and the answer for the user to select
+        /// and in order to play the game
+        /// </summary>
+        /// <param name="tree"></param>
         private static void SelectRandomAnswer(TreeNode tree)
         {
             //Load items from tree
@@ -231,10 +173,15 @@ namespace POE.PROG7312._19003041
                     i--;
                 }
             }
+            //Change the format of all third level answers to consistent format
             for (int i = 0; i < thirdLevelChoices.Count; i++)
             {
                 thirdLevelChoices[i] = thirdLevelChoices[i].Substring(0, 3);
             }
+            //Sort the lists numerically
+            firstLevelChoices.Sort();
+            secondLevelChoices.Sort();
+            thirdLevelChoices.Sort();
         }
     }
 }

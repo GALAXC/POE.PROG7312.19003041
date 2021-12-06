@@ -45,6 +45,10 @@ namespace POE.PROG7312._19003041
             this.btnNextFirst = new System.Windows.Forms.Button();
             this.btnNextSecond = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,6 +105,7 @@ namespace POE.PROG7312._19003041
             // 
             this.pointsBar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.pointsBar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
             this.correct20PointsToolStripMenuItem,
             this.incorrect5PointsToolStripMenuItem});
             this.pointsBar.Name = "pointsBar";
@@ -111,14 +116,14 @@ namespace POE.PROG7312._19003041
             // 
             this.correct20PointsToolStripMenuItem.Enabled = false;
             this.correct20PointsToolStripMenuItem.Name = "correct20PointsToolStripMenuItem";
-            this.correct20PointsToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.correct20PointsToolStripMenuItem.Text = "Correct: +20 points";
+            this.correct20PointsToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.correct20PointsToolStripMenuItem.Text = "Correct 3rd: +10 points";
             // 
             // incorrect5PointsToolStripMenuItem
             // 
             this.incorrect5PointsToolStripMenuItem.Enabled = false;
             this.incorrect5PointsToolStripMenuItem.Name = "incorrect5PointsToolStripMenuItem";
-            this.incorrect5PointsToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.incorrect5PointsToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.incorrect5PointsToolStripMenuItem.Text = "Incorrect: -5 points";
             // 
             // label1
@@ -196,12 +201,56 @@ namespace POE.PROG7312._19003041
             this.btnSubmit.Visible = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Enabled = false;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(212, 22);
+            this.toolStripMenuItem1.Text = "Correct 1st/2nd: +5 points";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(43, 41);
+            this.label2.MaximumSize = new System.Drawing.Size(500, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(493, 66);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Select the answer you think will get you to your goal, and then click Next.";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(603, 24);
+            this.label3.MaximumSize = new System.Drawing.Size(500, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(499, 99);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "You get 5 points for a correct answer and 10 points for a correct set of answers." +
+    "";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(502, 467);
+            this.label4.MaximumSize = new System.Drawing.Size(500, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(155, 33);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Good luck!";
+            // 
             // FindingCallNumbers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Turquoise;
             this.ClientSize = new System.Drawing.Size(1184, 561);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnNextSecond);
             this.Controls.Add(this.btnNextFirst);
@@ -212,6 +261,8 @@ namespace POE.PROG7312._19003041
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.answerLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(1200, 600);
+            this.MinimumSize = new System.Drawing.Size(1200, 600);
             this.Name = "FindingCallNumbers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library Training - Identify Areas";
@@ -240,5 +291,9 @@ namespace POE.PROG7312._19003041
         private System.Windows.Forms.Button btnNextFirst;
         private System.Windows.Forms.Button btnNextSecond;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
