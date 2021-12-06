@@ -19,6 +19,7 @@ namespace POE.PROG7312._19003041
 
         private void FindingCallNumbers_Load(object sender, EventArgs e)
         {
+            UpdatePoints();
             firstLevelList.Enabled = true;
             btnNextFirst.Visible = true;
             secondLevelList.Visible = false;

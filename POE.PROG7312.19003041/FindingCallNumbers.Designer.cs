@@ -29,6 +29,7 @@ namespace POE.PROG7312._19003041
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FindingCallNumbers));
             this.answerLabel = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -210,9 +211,10 @@ namespace POE.PROG7312._19003041
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.answerLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FindingCallNumbers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FindingCallNumbers";
+            this.Text = "Library Training - Identify Areas";
             this.Load += new System.EventHandler(this.FindingCallNumbers_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
